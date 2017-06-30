@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="blog-keji-web:war">
+    <output-path>$PROJECT_DIR$/blog-keji-web/target</output-path>
+    <root id="archive" name="blog-keji-web.war">
+      <element id="artifact" artifact-name="blog-keji-web:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,8 @@
+<html>
+    <title>Hello Velocity</title>
+    <body>
+        #set($name = "Nie")
+        Welcome $name to Javayou.com!
+        today is aaaa
+    </body>
+</html>

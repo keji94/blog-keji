@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/blog-keji.iml" filepath="$PROJECT_DIR$/blog-keji.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blog-keji-common/blog-keji-common.iml" filepath="$PROJECT_DIR$/blog-keji-common/blog-keji-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blog-keji-dao/blog-keji-dao.iml" filepath="$PROJECT_DIR$/blog-keji-dao/blog-keji-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blog-keji-service/blog-keji-service.iml" filepath="$PROJECT_DIR$/blog-keji-service/blog-keji-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blog-keji-web/blog-keji-web.iml" filepath="$PROJECT_DIR$/blog-keji-web/blog-keji-web.iml" />
+    </modules>
+  </component>
+</project>
