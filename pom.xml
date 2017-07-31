@@ -13,7 +13,6 @@
         <module>blog-keji-service</module>
         <module>blog-keji-dao</module>
         <module>blog-keji-common</module>
-        <module>blog-keji-content-web</module>
     </modules>
 
     <!--集中定义版本信息-->

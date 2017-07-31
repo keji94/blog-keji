@@ -1,4 +1,4 @@
-package com.keji.blog.service;
+package com.keji.blog.service.user.impl;
 
 import com.blog.keji.pojo.User;
 import com.blog.keji.query.UserQueryVo;
@@ -12,7 +12,7 @@ import java.util.List;
  * Created by wb-ny291824 on 2017/6/29.
  */
 @Service
-public class UserService {
+public class UserServiceImpl {
 
     @Autowired
     private UserDaoMapper userDaoMapper;
