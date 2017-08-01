@@ -20,7 +20,7 @@ public class BackstageServiceImpl implements BackstageService{
     @Resource
     private TbContentCategoryMapper tbContentCategoryMapper;
 
-    public List<EasyUiTreeNode> getContentCategoryList(long parentId) {
+    public List<EasyUiTreeNode> getContentCategoryList(Long parentId) {
         //取查询参数parentID
         List<TbContentCategory> list = getTbContentCategoriesByParentId(parentId);
         List<EasyUiTreeNode> easyUiTreeNodeList = new ArrayList<EasyUiTreeNode>();
