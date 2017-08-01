@@ -1,8 +1,8 @@
 package com.keji.blog.service.user.impl;
 
-import com.blog.keji.pojo.User;
-import com.blog.keji.query.UserQueryVo;
-import com.keji.blog.dao.UserDaoMapper;
+import com.keji.blog.pojo.User;
+import com.keji.blog.query.UserQueryVo;
+import com.keji.blog.mapper.UserDaoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
