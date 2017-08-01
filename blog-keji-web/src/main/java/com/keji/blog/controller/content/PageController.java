@@ -1,6 +1,7 @@
 package com.keji.blog.controller.content;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -8,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/content")
-public class ContentController {
+public class PageController {
 
     @RequestMapping("/index")
-    public String index() {
+    public String showIndex() {
         return "/content/index";
     }
 
-    @RequestMapping("/category/show")
-    public String show() {
-        return "/content/category-list";
+
+    @RequestMapping("/{page}")
+    public String showPage(@PathVariable String page) {
+        return "/content/"+page;
     }
 }

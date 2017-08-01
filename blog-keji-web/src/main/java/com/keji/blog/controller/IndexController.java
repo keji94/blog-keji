@@ -1,6 +1,6 @@
 package com.keji.blog.controller;
 
-import com.keji.blog.service.UserService;
+import com.keji.blog.service.user.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 public class IndexController {
 
     @Resource
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @RequestMapping(value = {"/","/test"})
     public String showIndex(){
