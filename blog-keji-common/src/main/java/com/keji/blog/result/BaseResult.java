@@ -5,11 +5,13 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
 
 /**
  * 淘淘商城自定义响应结构
  */
-public class BaseResult<T> implements Serializable{
+@Data
+public class BaseResult<T> extends PageResult implements Serializable {
 
     // 定义jackson对象
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -23,16 +25,18 @@ public class BaseResult<T> implements Serializable{
     // 响应中的数据
     private T data;
 
+
+
     public static <T> BaseResult<T> build(Integer status, String msg, T data) {
         return new BaseResult(status, msg, data);
     }
 
     public static <T> BaseResult<T> ok(T data) {
-        return new BaseResult<T>(data);
+        return new BaseResult<T>(200,"success",data);
     }
 
     public static BaseResult ok() {
-        return new BaseResult(null);
+        return new BaseResult(200,"success",null);
     }
 
     public static BaseResult makeFail(){
@@ -45,6 +49,10 @@ public class BaseResult<T> implements Serializable{
 
     public BaseResult() {
 
+    }
+    public BaseResult(Long total, List<?> rows) {
+        this.total = total;
+        this.rows = rows;
     }
 
     public static BaseResult build(Integer status, String msg) {
@@ -67,29 +75,6 @@ public class BaseResult<T> implements Serializable{
 //        return this.status == 200;
 //    }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 
     /**
      * 将json结果集转化为TaotaoResult对象
@@ -118,6 +103,8 @@ public class BaseResult<T> implements Serializable{
             return null;
         }
     }
+
+
 
     /**
      * 没有object对象的转化

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.keji.blog.mapper.TbContentArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.TbContentArticle" >
+    <id column="article_id" property="articleId" jdbcType="BIGINT" />
+    <result column="article_title" property="articleTitle" jdbcType="VARCHAR" />
+    <result column="article_status" property="articleStatus" jdbcType="INTEGER" />
+    <result column="article_is_top" property="articleIsTop" jdbcType="INTEGER" />
+    <result column="article_category_id" property="articleCategoryId" jdbcType="BIGINT" />
+    <result column="article_created" property="articleCreated" jdbcType="TIMESTAMP" />
+    <result column="article_updated" property="articleUpdated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.keji.blog.pojo.TbContentArticle" extends="BaseResultMap" >
+    <result column="article_content" property="articleContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    article_id, article_title, article_status, article_is_top, article_category_id, article_created, 
+    article_updated
+  </sql>
+  <sql id="Blob_Column_List" >
+    article_content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.keji.blog.pojo.TbContentArticleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_content_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.TbContentArticleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_content_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_content_article
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_content_article
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.TbContentArticleExample" >
+    delete from tb_content_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.keji.blog.pojo.TbContentArticle" >
+    insert into tb_content_article (article_id, article_title, article_status, 
+      article_is_top, article_category_id, article_created, 
+      article_updated, article_content)
+    values (#{articleId,jdbcType=BIGINT}, #{articleTitle,jdbcType=VARCHAR}, #{articleStatus,jdbcType=INTEGER}, 
+      #{articleIsTop,jdbcType=INTEGER}, #{articleCategoryId,jdbcType=BIGINT}, #{articleCreated,jdbcType=TIMESTAMP}, 
+      #{articleUpdated,jdbcType=TIMESTAMP}, #{articleContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.keji.blog.pojo.TbContentArticle" >
+    insert into tb_content_article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        article_id,
+      </if>
+      <if test="articleTitle != null" >
+        article_title,
+      </if>
+      <if test="articleStatus != null" >
+        article_status,
+      </if>
+      <if test="articleIsTop != null" >
+        article_is_top,
+      </if>
+      <if test="articleCategoryId != null" >
+        article_category_id,
+      </if>
+      <if test="articleCreated != null" >
+        article_created,
+      </if>
+      <if test="articleUpdated != null" >
+        article_updated,
+      </if>
+      <if test="articleContent != null" >
+        article_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        #{articleId,jdbcType=BIGINT},
+      </if>
+      <if test="articleTitle != null" >
+        #{articleTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articleStatus != null" >
+        #{articleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="articleIsTop != null" >
+        #{articleIsTop,jdbcType=INTEGER},
+      </if>
+      <if test="articleCategoryId != null" >
+        #{articleCategoryId,jdbcType=BIGINT},
+      </if>
+      <if test="articleCreated != null" >
+        #{articleCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleUpdated != null" >
+        #{articleUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleContent != null" >
+        #{articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.keji.blog.pojo.TbContentArticleExample" resultType="java.lang.Integer" >
+    select count(*) from tb_content_article
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_content_article
+    <set >
+      <if test="record.articleId != null" >
+        article_id = #{record.articleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.articleTitle != null" >
+        article_title = #{record.articleTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleStatus != null" >
+        article_status = #{record.articleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.articleIsTop != null" >
+        article_is_top = #{record.articleIsTop,jdbcType=INTEGER},
+      </if>
+      <if test="record.articleCategoryId != null" >
+        article_category_id = #{record.articleCategoryId,jdbcType=BIGINT},
+      </if>
+      <if test="record.articleCreated != null" >
+        article_created = #{record.articleCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.articleUpdated != null" >
+        article_updated = #{record.articleUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.articleContent != null" >
+        article_content = #{record.articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tb_content_article
+    set article_id = #{record.articleId,jdbcType=BIGINT},
+      article_title = #{record.articleTitle,jdbcType=VARCHAR},
+      article_status = #{record.articleStatus,jdbcType=INTEGER},
+      article_is_top = #{record.articleIsTop,jdbcType=INTEGER},
+      article_category_id = #{record.articleCategoryId,jdbcType=BIGINT},
+      article_created = #{record.articleCreated,jdbcType=TIMESTAMP},
+      article_updated = #{record.articleUpdated,jdbcType=TIMESTAMP},
+      article_content = #{record.articleContent,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_content_article
+    set article_id = #{record.articleId,jdbcType=BIGINT},
+      article_title = #{record.articleTitle,jdbcType=VARCHAR},
+      article_status = #{record.articleStatus,jdbcType=INTEGER},
+      article_is_top = #{record.articleIsTop,jdbcType=INTEGER},
+      article_category_id = #{record.articleCategoryId,jdbcType=BIGINT},
+      article_created = #{record.articleCreated,jdbcType=TIMESTAMP},
+      article_updated = #{record.articleUpdated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.TbContentArticle" >
+    update tb_content_article
+    <set >
+      <if test="articleTitle != null" >
+        article_title = #{articleTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="articleStatus != null" >
+        article_status = #{articleStatus,jdbcType=INTEGER},
+      </if>
+      <if test="articleIsTop != null" >
+        article_is_top = #{articleIsTop,jdbcType=INTEGER},
+      </if>
+      <if test="articleCategoryId != null" >
+        article_category_id = #{articleCategoryId,jdbcType=BIGINT},
+      </if>
+      <if test="articleCreated != null" >
+        article_created = #{articleCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleUpdated != null" >
+        article_updated = #{articleUpdated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="articleContent != null" >
+        article_content = #{articleContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.keji.blog.pojo.TbContentArticle" >
+    update tb_content_article
+    set article_title = #{articleTitle,jdbcType=VARCHAR},
+      article_status = #{articleStatus,jdbcType=INTEGER},
+      article_is_top = #{articleIsTop,jdbcType=INTEGER},
+      article_category_id = #{articleCategoryId,jdbcType=BIGINT},
+      article_created = #{articleCreated,jdbcType=TIMESTAMP},
+      article_updated = #{articleUpdated,jdbcType=TIMESTAMP},
+      article_content = #{articleContent,jdbcType=LONGVARCHAR}
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.TbContentArticle" >
+    update tb_content_article
+    set article_title = #{articleTitle,jdbcType=VARCHAR},
+      article_status = #{articleStatus,jdbcType=INTEGER},
+      article_is_top = #{articleIsTop,jdbcType=INTEGER},
+      article_category_id = #{articleCategoryId,jdbcType=BIGINT},
+      article_created = #{articleCreated,jdbcType=TIMESTAMP},
+      article_updated = #{articleUpdated,jdbcType=TIMESTAMP}
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,5 +1,9 @@
 package com.keji.blog.controller.backstage;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
+import com.keji.blog.pojo.TbContentCategory;
+import com.keji.blog.pojo.TbContentPicture;
+import com.keji.blog.result.BaseResult;
 import com.keji.blog.result.EasyUiTreeNode;
 import com.keji.blog.service.backstage.BackstageService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +26,7 @@ import java.util.List;
 public class BackstageController {
 
     @Autowired
-    private BackstageService contentService;
+    private BackstageService backstageService;
 
     @RequestMapping("/index")
     public String showIndex() {
@@ -47,9 +51,10 @@ public class BackstageController {
     public List<EasyUiTreeNode> getContentCatList(@RequestParam(value = "id",defaultValue = "0")long parentId){
         List<EasyUiTreeNode> catList = null;
         try {
-            catList = contentService.getContentCategoryList(parentId);
+            catList = backstageService.getContentCategoryList(parentId);
         } catch (Exception e) {
             log.error("iContentCategoryService.getContentCatList is error"+e);
+            return null;
         }
         if (catList.size()>0){
             return catList;
@@ -58,5 +63,80 @@ public class BackstageController {
             return null;
         }
     }
+
+    @RequestMapping("/category/create")
+    @ResponseBody
+    public BaseResult<TbContentCategory> createCategory(long parentId,String name){
+        BaseResult<TbContentCategory> result = null;
+        try {
+            result = backstageService.createCategory(parentId, name);
+        } catch (Exception e) {
+            log.error("iContentCategoryService.createCategory",e);
+            return BaseResult.makeFail();
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @RequestMapping("/category/update")
+    public BaseResult<Integer> updateCategory(long id,String name){
+
+        BaseResult<Integer> result = null;
+        try {
+            result = backstageService.updateCategory(id, name);
+        } catch (Exception e) {
+            log.error("iContentCategoryService.updateCategory is error",e);
+            return BaseResult.makeFail();
+        }
+        return result;
+    }
+
+    @ResponseBody
+    @RequestMapping("/category/delete")
+    public BaseResult<Integer> deleteCategory(long id){
+        BaseResult<Integer> result = backstageService.deleteCategory(id);
+        return result;
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/picSave")
+    public BaseResult picAdd(TbContentPicture tbContentPicture) {
+        if (tbContentPicture == null){
+            return BaseResult.makeFail("参数错误");
+        }
+
+        //根据Id查询关联的文章是否存在，不存在return fail
+        BaseResult queryArticleResult = backstageService.getArticleById(tbContentPicture.getArticleId());
+
+        if (queryArticleResult.getStatus() == 500){
+            return BaseResult.makeFail("Id为"+tbContentPicture.getArticleId()+"的文章不存在");
+        }
+
+        BaseResult result = null;
+        try {
+             result = backstageService.addPic(tbContentPicture);
+        } catch (Exception e) {
+            log.error("backstageService.addPic(tbContentPicture) is error...",e);
+            return BaseResult.makeFail("系统错误");
+        }
+
+        return result;
+    }
+
+    @ResponseBody
+    @RequestMapping("/listPic")
+    public BaseResult picList(@RequestParam(defaultValue = "1") int page,@RequestParam(defaultValue = "20") int rows ) {
+        BaseResult result = null;
+        try {
+            result = backstageService.picList(page,rows);
+        } catch (Exception e) {
+            log.error("backstageService.picList() is error...",e);
+            return BaseResult.makeFail("系统错误");
+        }
+        return result;
+    }
+
+
 
 }

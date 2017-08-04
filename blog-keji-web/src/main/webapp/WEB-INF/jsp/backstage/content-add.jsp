@@ -53,7 +53,7 @@
 <script type="text/javascript">
 	var contentAddEditor ;
 	$(function(){
-		contentAddEditor = TT.createEditor("#contentAddForm [name=backstage]");
+		contentAddEditor = TT.createEditor("#contentAddForm [name=content]");
 		TT.initOnePicUpload();
 		$("#contentAddForm [name=categoryId]").val($("#contentCategoryTree").tree("getSelected").id);
 	});

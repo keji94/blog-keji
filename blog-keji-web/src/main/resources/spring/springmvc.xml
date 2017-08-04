@@ -22,7 +22,6 @@
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
     <mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**"/>
     <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
-    <mvc:resources location="/WEB-INF/ftl/" mapping="/ftl/**"/>
 
 
     <!-- 定义文件上传解析器 -->

@@ -12,6 +12,10 @@
     <artifactId>blog-keji-service</artifactId>
     <dependencies>
         <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.keji</groupId>
             <artifactId>blog-keji-dao</artifactId>
             <version>1.0-SNAPSHOT</version>
