@@ -24,6 +24,10 @@ public class ContentController {
     @Resource
     private ContentService contentService;
 
+    /**
+     * TODO 为tb_content_category表增加新字段url,使用逆向工程重新生成pojo和mapper文件
+     * @return
+     */
     @RequestMapping("/showCategory")
     public BaseResult<List<TbContentCategory>> showCategory() {
         BaseResult<List<TbContentCategory>> result = null;

@@ -32,7 +32,6 @@ public class ContentServiceImpl implements ContentService {
             log.error("tbContentCategoryMapper.selectByExample is error...",e);
             return BaseResult.makeFail();
         }
-        System.out.println("123");
         return BaseResult.ok(list);
     }
 

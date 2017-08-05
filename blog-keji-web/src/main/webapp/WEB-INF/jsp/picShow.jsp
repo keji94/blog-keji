@@ -28,7 +28,7 @@
     });
 
 </script>
-<div class="row">
+<div class="row" >
     <!-- 图片的小点儿 -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

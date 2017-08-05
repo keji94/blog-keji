@@ -15,7 +15,6 @@
     <bytecodeTargetLevel>
       <module name="blog-keji" target="1.5" />
       <module name="blog-keji-common" target="1.5" />
-      <module name="blog-keji-content-web" target="1.5" />
       <module name="blog-keji-dao" target="1.5" />
       <module name="blog-keji-service" target="1.5" />
       <module name="blog-keji-web" target="1.5" />
