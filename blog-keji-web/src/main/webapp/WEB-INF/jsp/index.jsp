@@ -15,34 +15,32 @@
         <!-- Custom styles for this template -->
         <link href="../css/jquery.bxslider.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/login-register.css" rel="stylesheet" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/animate.min.css" rel="stylesheet">
+        <link href="../css/owl.carousel.css" rel="stylesheet">
+        <link href="../css/owl.transitions.css" rel="stylesheet">
+        <link href="../css/prettyPhoto.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
 
         <!-- 引入JS-->
         <script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
         <script type="text/javascript" src="../js/bootstrap.min.js" ></script>
         <script src="../js/jquery.bxslider.js"></script>
         <script src="../js/mooz.scripts.min.js"></script>
+        <script src="../js/login-register.js" type="text/javascript"></script>
 
 
     </head>
 
     <body>
+
+        <!--header部分DIV-->
+        <%@include file="header.jsp"%>
         <!--整体div-->
         <div class="container">
-            <!--Logon部分DIV-->
-            <div class="row">
-                <div class="col-md-4" style="margin-left: -16px">
-                    <img src="../images/keji.jpg" class="img-responsive" >
-                </div>
-                <div class="col-md-8" style="text-align: right">
-                    <div style="margin-top: 10px">
-                        <a href="">登录</a>
-                        <a href="">注册</a>
-                    </div>
-                </div>
-            </div>
 
-            <!--导航条部分DIV-->
-            <%@include file="menu.jsp"%>
             <!--图片轮播部分DIV-->
             <%@include file="picShow.jsp"%>
             <!--最新博客-->

@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" style="color: #0f0f0f">首页</a>
+                <a class="navbar-brand" href="www.baidu.com" style="color: #0f0f0f">首页</a>
             </div>
 
             <!-- Collect the nav links, forms, and otbackstagetent for toggling -->
