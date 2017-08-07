@@ -2,16 +2,18 @@ package com.keji.blog.pojo;
 
 import java.util.Date;
 
-public class TbContentArticle {
+public class BlogArticle {
     private Long articleId;
 
     private String articleTitle;
 
-    private Integer articleStatus;
+    private Boolean articleStatus;
 
-    private Integer articleIsTop;
+    private Boolean articleIstop;
 
-    private Long articleCategoryId;
+    private Long userId;
+
+    private Long categoryId;
 
     private Date articleCreated;
 
@@ -35,28 +37,36 @@ public class TbContentArticle {
         this.articleTitle = articleTitle == null ? null : articleTitle.trim();
     }
 
-    public Integer getArticleStatus() {
+    public Boolean getArticleStatus() {
         return articleStatus;
     }
 
-    public void setArticleStatus(Integer articleStatus) {
+    public void setArticleStatus(Boolean articleStatus) {
         this.articleStatus = articleStatus;
     }
 
-    public Integer getArticleIsTop() {
-        return articleIsTop;
+    public Boolean getArticleIstop() {
+        return articleIstop;
     }
 
-    public void setArticleIsTop(Integer articleIsTop) {
-        this.articleIsTop = articleIsTop;
+    public void setArticleIstop(Boolean articleIstop) {
+        this.articleIstop = articleIstop;
     }
 
-    public Long getArticleCategoryId() {
-        return articleCategoryId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setArticleCategoryId(Long articleCategoryId) {
-        this.articleCategoryId = articleCategoryId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public Date getArticleCreated() {

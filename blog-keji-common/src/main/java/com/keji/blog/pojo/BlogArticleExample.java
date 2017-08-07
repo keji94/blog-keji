@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TbContentArticleExample {
+public class BlogArticleExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public TbContentArticleExample() {
+    public BlogArticleExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -245,173 +245,233 @@ public class TbContentArticleExample {
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusEqualTo(Integer value) {
+        public Criteria andArticleStatusEqualTo(Boolean value) {
             addCriterion("article_status =", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusNotEqualTo(Integer value) {
+        public Criteria andArticleStatusNotEqualTo(Boolean value) {
             addCriterion("article_status <>", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusGreaterThan(Integer value) {
+        public Criteria andArticleStatusGreaterThan(Boolean value) {
             addCriterion("article_status >", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusGreaterThanOrEqualTo(Integer value) {
+        public Criteria andArticleStatusGreaterThanOrEqualTo(Boolean value) {
             addCriterion("article_status >=", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusLessThan(Integer value) {
+        public Criteria andArticleStatusLessThan(Boolean value) {
             addCriterion("article_status <", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusLessThanOrEqualTo(Integer value) {
+        public Criteria andArticleStatusLessThanOrEqualTo(Boolean value) {
             addCriterion("article_status <=", value, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusIn(List<Integer> values) {
+        public Criteria andArticleStatusIn(List<Boolean> values) {
             addCriterion("article_status in", values, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusNotIn(List<Integer> values) {
+        public Criteria andArticleStatusNotIn(List<Boolean> values) {
             addCriterion("article_status not in", values, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusBetween(Integer value1, Integer value2) {
+        public Criteria andArticleStatusBetween(Boolean value1, Boolean value2) {
             addCriterion("article_status between", value1, value2, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleStatusNotBetween(Integer value1, Integer value2) {
+        public Criteria andArticleStatusNotBetween(Boolean value1, Boolean value2) {
             addCriterion("article_status not between", value1, value2, "articleStatus");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopIsNull() {
-            addCriterion("article_is_top is null");
+        public Criteria andArticleIstopIsNull() {
+            addCriterion("article_isTop is null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopIsNotNull() {
-            addCriterion("article_is_top is not null");
+        public Criteria andArticleIstopIsNotNull() {
+            addCriterion("article_isTop is not null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopEqualTo(Integer value) {
-            addCriterion("article_is_top =", value, "articleIsTop");
+        public Criteria andArticleIstopEqualTo(Boolean value) {
+            addCriterion("article_isTop =", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopNotEqualTo(Integer value) {
-            addCriterion("article_is_top <>", value, "articleIsTop");
+        public Criteria andArticleIstopNotEqualTo(Boolean value) {
+            addCriterion("article_isTop <>", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopGreaterThan(Integer value) {
-            addCriterion("article_is_top >", value, "articleIsTop");
+        public Criteria andArticleIstopGreaterThan(Boolean value) {
+            addCriterion("article_isTop >", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopGreaterThanOrEqualTo(Integer value) {
-            addCriterion("article_is_top >=", value, "articleIsTop");
+        public Criteria andArticleIstopGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("article_isTop >=", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopLessThan(Integer value) {
-            addCriterion("article_is_top <", value, "articleIsTop");
+        public Criteria andArticleIstopLessThan(Boolean value) {
+            addCriterion("article_isTop <", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopLessThanOrEqualTo(Integer value) {
-            addCriterion("article_is_top <=", value, "articleIsTop");
+        public Criteria andArticleIstopLessThanOrEqualTo(Boolean value) {
+            addCriterion("article_isTop <=", value, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopIn(List<Integer> values) {
-            addCriterion("article_is_top in", values, "articleIsTop");
+        public Criteria andArticleIstopIn(List<Boolean> values) {
+            addCriterion("article_isTop in", values, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopNotIn(List<Integer> values) {
-            addCriterion("article_is_top not in", values, "articleIsTop");
+        public Criteria andArticleIstopNotIn(List<Boolean> values) {
+            addCriterion("article_isTop not in", values, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopBetween(Integer value1, Integer value2) {
-            addCriterion("article_is_top between", value1, value2, "articleIsTop");
+        public Criteria andArticleIstopBetween(Boolean value1, Boolean value2) {
+            addCriterion("article_isTop between", value1, value2, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleIsTopNotBetween(Integer value1, Integer value2) {
-            addCriterion("article_is_top not between", value1, value2, "articleIsTop");
+        public Criteria andArticleIstopNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("article_isTop not between", value1, value2, "articleIstop");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdIsNull() {
-            addCriterion("article_category_id is null");
+        public Criteria andUserIdIsNull() {
+            addCriterion("user_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdIsNotNull() {
-            addCriterion("article_category_id is not null");
+        public Criteria andUserIdIsNotNull() {
+            addCriterion("user_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdEqualTo(Long value) {
-            addCriterion("article_category_id =", value, "articleCategoryId");
+        public Criteria andUserIdEqualTo(Long value) {
+            addCriterion("user_id =", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdNotEqualTo(Long value) {
-            addCriterion("article_category_id <>", value, "articleCategoryId");
+        public Criteria andUserIdNotEqualTo(Long value) {
+            addCriterion("user_id <>", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdGreaterThan(Long value) {
-            addCriterion("article_category_id >", value, "articleCategoryId");
+        public Criteria andUserIdGreaterThan(Long value) {
+            addCriterion("user_id >", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("article_category_id >=", value, "articleCategoryId");
+        public Criteria andUserIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("user_id >=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdLessThan(Long value) {
-            addCriterion("article_category_id <", value, "articleCategoryId");
+        public Criteria andUserIdLessThan(Long value) {
+            addCriterion("user_id <", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdLessThanOrEqualTo(Long value) {
-            addCriterion("article_category_id <=", value, "articleCategoryId");
+        public Criteria andUserIdLessThanOrEqualTo(Long value) {
+            addCriterion("user_id <=", value, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdIn(List<Long> values) {
-            addCriterion("article_category_id in", values, "articleCategoryId");
+        public Criteria andUserIdIn(List<Long> values) {
+            addCriterion("user_id in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdNotIn(List<Long> values) {
-            addCriterion("article_category_id not in", values, "articleCategoryId");
+        public Criteria andUserIdNotIn(List<Long> values) {
+            addCriterion("user_id not in", values, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdBetween(Long value1, Long value2) {
-            addCriterion("article_category_id between", value1, value2, "articleCategoryId");
+        public Criteria andUserIdBetween(Long value1, Long value2) {
+            addCriterion("user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
-        public Criteria andArticleCategoryIdNotBetween(Long value1, Long value2) {
-            addCriterion("article_category_id not between", value1, value2, "articleCategoryId");
+        public Criteria andUserIdNotBetween(Long value1, Long value2) {
+            addCriterion("user_id not between", value1, value2, "userId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdIsNull() {
+            addCriterion("category_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdIsNotNull() {
+            addCriterion("category_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdEqualTo(Long value) {
+            addCriterion("category_id =", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotEqualTo(Long value) {
+            addCriterion("category_id <>", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdGreaterThan(Long value) {
+            addCriterion("category_id >", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("category_id >=", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdLessThan(Long value) {
+            addCriterion("category_id <", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdLessThanOrEqualTo(Long value) {
+            addCriterion("category_id <=", value, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdIn(List<Long> values) {
+            addCriterion("category_id in", values, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotIn(List<Long> values) {
+            addCriterion("category_id not in", values, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdBetween(Long value1, Long value2) {
+            addCriterion("category_id between", value1, value2, "categoryId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCategoryIdNotBetween(Long value1, Long value2) {
+            addCriterion("category_id not between", value1, value2, "categoryId");
             return (Criteria) this;
         }
 

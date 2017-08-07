@@ -1,8 +1,8 @@
 package com.keji.blog.controller.backstage;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
-import com.keji.blog.pojo.TbContentCategory;
-import com.keji.blog.pojo.TbContentPicture;
+
+import com.keji.blog.pojo.BlogCategory;
+import com.keji.blog.pojo.BlogPicture;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.result.EasyUiTreeNode;
 import com.keji.blog.service.backstage.BackstageService;
@@ -66,8 +66,8 @@ public class BackstageController {
 
     @RequestMapping("/category/create")
     @ResponseBody
-    public BaseResult<TbContentCategory> createCategory(long parentId,String name){
-        BaseResult<TbContentCategory> result = null;
+    public BaseResult<BlogCategory> createCategory(long parentId, String name){
+        BaseResult<BlogCategory> result = null;
         try {
             result = backstageService.createCategory(parentId, name);
         } catch (Exception e) {
@@ -101,23 +101,23 @@ public class BackstageController {
 
     @ResponseBody
     @RequestMapping("/picSave")
-    public BaseResult picAdd(TbContentPicture tbContentPicture) {
-        if (tbContentPicture == null){
+    public BaseResult picAdd(BlogPicture blogPicture) {
+        if (blogPicture == null){
             return BaseResult.makeFail("参数错误");
         }
 
         //根据Id查询关联的文章是否存在，不存在return fail
-        BaseResult queryArticleResult = backstageService.getArticleById(tbContentPicture.getArticleId());
+        BaseResult queryArticleResult = backstageService.getArticleById(blogPicture.getArticleId());
 
         if (queryArticleResult.getStatus() == 500){
-            return BaseResult.makeFail("Id为"+tbContentPicture.getArticleId()+"的文章不存在");
+            return BaseResult.makeFail("Id为"+blogPicture.getArticleId()+"的文章不存在");
         }
 
         BaseResult result = null;
         try {
-             result = backstageService.addPic(tbContentPicture);
+             result = backstageService.addPic(blogPicture);
         } catch (Exception e) {
-            log.error("backstageService.addPic(tbContentPicture) is error...",e);
+            log.error("backstageService.addPic(blogPicture) is error...",e);
             return BaseResult.makeFail("系统错误");
         }
 

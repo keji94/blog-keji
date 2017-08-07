@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,100italic,300italic,400italic,700italic);
+
 
 /*************************
 *******Typography******
@@ -181,7 +181,7 @@ ul.nostyle i {
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
   #main-menu.navbar-default .navbar-nav > li.active > a,
   #main-menu.navbar-default .navbar-nav > li.open > a,
@@ -231,7 +231,7 @@ ul.nostyle i {
   overflow: hidden;
 }
 #main-slider .item {
-  height: 558px;
+  height: 200px;
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;

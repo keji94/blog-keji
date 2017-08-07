@@ -11,7 +11,7 @@
         <!-- 引入BootStrap的CSS -->
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
         <!-- Custom styles for this template -->
         <link href="../css/jquery.bxslider.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
@@ -40,7 +40,6 @@
         <%@include file="header.jsp"%>
         <!--整体div-->
         <div class="container">
-
             <!--图片轮播部分DIV-->
             <%@include file="picShow.jsp"%>
             <!--最新博客-->

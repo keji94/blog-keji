@@ -1,6 +1,6 @@
 package com.keji.blog.controller.content;
 
-import com.keji.blog.pojo.TbContentCategory;
+import com.keji.blog.pojo.BlogCategory;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.content.ContentService;
 import lombok.extern.slf4j.Slf4j;
@@ -29,8 +29,8 @@ public class ContentController {
      * @return
      */
     @RequestMapping("/showCategory")
-    public BaseResult<List<TbContentCategory>> showCategory() {
-        BaseResult<List<TbContentCategory>> result = null;
+    public BaseResult<List<BlogCategory>> showCategory() {
+        BaseResult<List<BlogCategory>> result = null;
         try {
             result= contentService.showCategory();
         } catch (Exception e) {

@@ -2,22 +2,22 @@ package com.keji.blog.pojo;
 
 import java.util.Date;
 
-public class TbContentPicture {
+public class BlogPicture {
     private Long pictureId;
 
     private String pictureName;
 
-    private String pictureSource;
+    private String pictureResource;
 
-    private Integer pictureStatus;
+    private Boolean pictureStatus;
 
-    private Integer pictureSortOrder;
+    private Integer pictureOrdernum;
+
+    private Long articleId;
 
     private Date pictureCreated;
 
     private Date pictureUpdated;
-
-    private Long articleId;
 
     public Long getPictureId() {
         return pictureId;
@@ -35,28 +35,36 @@ public class TbContentPicture {
         this.pictureName = pictureName == null ? null : pictureName.trim();
     }
 
-    public String getPictureSource() {
-        return pictureSource;
+    public String getPictureResource() {
+        return pictureResource;
     }
 
-    public void setPictureSource(String pictureSource) {
-        this.pictureSource = pictureSource == null ? null : pictureSource.trim();
+    public void setPictureResource(String pictureResource) {
+        this.pictureResource = pictureResource == null ? null : pictureResource.trim();
     }
 
-    public Integer getPictureStatus() {
+    public Boolean getPictureStatus() {
         return pictureStatus;
     }
 
-    public void setPictureStatus(Integer pictureStatus) {
+    public void setPictureStatus(Boolean pictureStatus) {
         this.pictureStatus = pictureStatus;
     }
 
-    public Integer getPictureSortOrder() {
-        return pictureSortOrder;
+    public Integer getPictureOrdernum() {
+        return pictureOrdernum;
     }
 
-    public void setPictureSortOrder(Integer pictureSortOrder) {
-        this.pictureSortOrder = pictureSortOrder;
+    public void setPictureOrdernum(Integer pictureOrdernum) {
+        this.pictureOrdernum = pictureOrdernum;
+    }
+
+    public Long getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Long articleId) {
+        this.articleId = articleId;
     }
 
     public Date getPictureCreated() {
@@ -73,13 +81,5 @@ public class TbContentPicture {
 
     public void setPictureUpdated(Date pictureUpdated) {
         this.pictureUpdated = pictureUpdated;
-    }
-
-    public Long getArticleId() {
-        return articleId;
-    }
-
-    public void setArticleId(Long articleId) {
-        this.articleId = articleId;
     }
 }

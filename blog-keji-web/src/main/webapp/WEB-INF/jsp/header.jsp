@@ -10,10 +10,9 @@
     $(function(){
         $.post("/content/showCategory",{},function(data){
             $(data.data).each(function(i,n){
-                $("#menuID").append("<li class='scroll'><a href='"+n.category_url+"'>"+n.name+"</a></li>");
+                $("#menuID").append("<li class='scroll'><a href='"+n.categoryUrl+"'>"+n.categoryName+"</a></li>");
             });
         },"json");
-
     });
 </script>
 

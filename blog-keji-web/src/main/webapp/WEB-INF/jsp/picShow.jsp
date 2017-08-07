@@ -13,13 +13,13 @@
             $(data.rows).each(function(i,row){
                 if(i === 0){
                     $("#picBox").append(
-                        "<div class='item active'> <img src="+row.pictureSource+ "><div class='carousel-caption'></div> </div>");
+                        "<div class='item active'> <img src="+row.pictureResource+ "><div class='carousel-caption'></div> </div>");
                     $("#carousel-indicators").append(
                         "<li data-target='#carousel-example-generic' data-slide-to="+i+" class='active'></li>");
 
                 }else {
                     $("#picBox").append(
-                        "<div class='item'> <img src="+row.pictureSource+ "><div class='carousel-caption'></div> </div>");
+                        "<div class='item'> <img src="+row.pictureResource+ "><div class='carousel-caption'></div> </div>");
                     $("#carousel-indicators").append(
                         "<li data-target='#carousel-example-generic' data-slide-to="+i+" ></li>");
                 }

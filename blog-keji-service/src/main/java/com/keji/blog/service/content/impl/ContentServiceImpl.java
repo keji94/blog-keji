@@ -1,8 +1,8 @@
 package com.keji.blog.service.content.impl;
 
-import com.keji.blog.mapper.TbContentCategoryMapper;
-import com.keji.blog.pojo.TbContentCategory;
-import com.keji.blog.pojo.TbContentCategoryExample;
+import com.keji.blog.mapper.BlogCategoryMapper;
+import com.keji.blog.pojo.BlogCategory;
+import com.keji.blog.pojo.BlogCategoryExample;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.content.ContentService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,17 +19,17 @@ import java.util.List;
 public class ContentServiceImpl implements ContentService {
 
     @Resource
-    private TbContentCategoryMapper tbContentCategoryMapper;
+    private BlogCategoryMapper blogCategoryMapper;
 
-    public BaseResult<List<TbContentCategory>> showCategory() {
-        TbContentCategoryExample example = new TbContentCategoryExample();
-        TbContentCategoryExample.Criteria criteria = example.createCriteria();
-        criteria.andIdNotEqualTo(1L);
-        List<TbContentCategory> list = null;
+    public BaseResult<List<BlogCategory>> showCategory() {
+        BlogCategoryExample example = new BlogCategoryExample();
+        BlogCategoryExample.Criteria criteria = example.createCriteria();
+        criteria.andCategoryIdNotEqualTo(1L);
+        List<BlogCategory> list = null;
         try {
-            list = tbContentCategoryMapper.selectByExample(example);
+            list = blogCategoryMapper.selectByExample(example);
         } catch (Exception e) {
-            log.error("tbContentCategoryMapper.selectByExample is error...",e);
+            log.error("blogCategoryMapper.selectByExample is error...",e);
             return BaseResult.makeFail();
         }
         return BaseResult.ok(list);

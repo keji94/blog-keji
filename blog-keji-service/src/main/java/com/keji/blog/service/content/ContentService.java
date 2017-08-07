@@ -1,6 +1,6 @@
 package com.keji.blog.service.content;
 
-import com.keji.blog.pojo.TbContentCategory;
+import com.keji.blog.pojo.BlogCategory;
 import com.keji.blog.result.BaseResult;
 
 import java.util.List;
@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface ContentService {
 
-    BaseResult<List<TbContentCategory>> showCategory();
+    BaseResult<List<BlogCategory>> showCategory();
 }

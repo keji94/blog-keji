@@ -46,11 +46,12 @@
                 <div class="box">
                     <div class="content registerBox" style="display:none;">
                         <div class="form">
-                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/user/register" accept-charset="UTF-8">
+                                <input id="email" class="form-control" type="text" placeholder="邮箱" name="userName" autofocus="autofocus">
+                                <input id="password" class="form-control" type="password" placeholder="密码" name="userPassword">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="确认密码" name="password_confirmation">
+                                <input id="nickname" class="form-control" type="text" placeholder="昵称" name="userNickname">
+                                <input class="btn btn-default btn-register" type="button" value="注册" name="commit" onclick="checkResigter()">
                             </form>
                         </div>
                     </div>
@@ -63,8 +64,8 @@
                             ?</span>
                 </div>
                 <div class="forgot register-footer" style="display:none">
-                    <span>Already have an account?</span>
-                    <a href="javascript: showLoginForm();">Login</a>
+                    <span>已经拥有账号?</span>
+                    <a href="javascript: showLoginForm();">登录</a>
                 </div>
             </div>
         </div>

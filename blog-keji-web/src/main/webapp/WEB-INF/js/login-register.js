@@ -57,13 +57,45 @@ function loginAjax(email){
      // shakeModal();
 }
 
-function shakeModal(){
+function shakeModal(tip){
     $('#loginModal .modal-dialog').addClass('shake');
-             $('.error').addClass('alert alert-danger').html("Invalid email/password combination");
-             $('input[type="password"]').val('');
-             setTimeout( function(){
-                $('#loginModal .modal-dialog').removeClass('shake');
-    }, 1000 );
+         $('.error').addClass('alert alert-danger').html(tip);
+         setTimeout( function(){
+            $('#loginModal .modal-dialog').removeClass('shake');
+         }, 1000 );
+}
+
+function checkResigter() {
+    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)+$/;
+    var email = $('#email')[0].value;
+    var length = $('#password')[0].value.length;
+    var password = $('#password')[0].value;
+    var passwordCon = $('#password_confirmation')[0].value;
+    var nickLength = $('#nickname')[0].value.length;
+    if (!reg.test(email)) {
+        var tip = "请正确填写邮箱";
+        shakeModal(tip);
+        $('#email').val('');
+    }else if (length <= 6) {
+        var tip = "密码长度不能小于6位数";
+        shakeModal(tip);
+        $('#password').val('');
+    }else if (passwordCon != password) {
+        var tip = "两次输入的密码不一样";
+        shakeModal(tip);
+        $('#password_confirmation').val('');
+    }else if(nickLength == 0) {
+        var tip = '昵称不能为空';
+        shakeModal(tip);
+    }else if(nickLength >=8) {
+        var tip = '昵称长度不能超过8';
+        shakeModal(tip);
+    }
+
+    $.post("/user/register",{},function () {
+
+    });
+
 }
 
    

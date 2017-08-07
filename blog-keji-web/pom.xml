@@ -43,6 +43,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!--servlet-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
         <!-- spring的依赖 -->
         <!-- Spring -->
         <dependency>

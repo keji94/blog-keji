@@ -1,30 +1,35 @@
 package com.keji.blog.service.user.impl;
 
-import com.keji.blog.pojo.User;
-import com.keji.blog.query.UserQueryVo;
-import com.keji.blog.mapper.UserDaoMapper;
+import com.keji.blog.mapper.BlogUserMapper;
+import com.keji.blog.pojo.BlogUser;
+import com.keji.blog.result.BaseResult;
+import com.keji.blog.service.user.UserService;
+import com.keji.blog.util.BlogUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by wb-ny291824 on 2017/6/29.
  */
 @Service
-public class UserServiceImpl {
+@Slf4j
+@Transactional
+public class UserServiceImpl implements UserService{
 
     @Autowired
-    private UserDaoMapper userDaoMapper;
+    private BlogUserMapper userMapper;
 
-    public int check(String username, String password) {
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(password);
-        UserQueryVo userQueryVo = new UserQueryVo();
-        userQueryVo.setUser(user);
-        List<User> users = userDaoMapper.check(userQueryVo);
-        System.out.println(users);
-        return 0;
+    public BaseResult register(BlogUser user) {
+        try {
+            userMapper.insert(user);
+        } catch (Exception e) {
+            log.error("userMapper.insert is error...",e);
+            return BaseResult.makeFail("注册失败");
+        }
+        return BaseResult.ok();
     }
+
+
 }
