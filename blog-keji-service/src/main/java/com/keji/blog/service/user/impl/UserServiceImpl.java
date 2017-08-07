@@ -2,6 +2,7 @@ package com.keji.blog.service.user.impl;
 
 import com.keji.blog.mapper.BlogUserMapper;
 import com.keji.blog.pojo.BlogUser;
+import com.keji.blog.pojo.BlogUserExample;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.user.UserService;
 import com.keji.blog.util.BlogUtil;
@@ -9,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created by wb-ny291824 on 2017/6/29.
@@ -29,6 +32,18 @@ public class UserServiceImpl implements UserService{
             return BaseResult.makeFail("注册失败");
         }
         return BaseResult.ok();
+    }
+
+    public BaseResult<List<BlogUser>> existUser(BlogUser user) {
+        BlogUserExample example = new BlogUserExample();
+        BlogUserExample.Criteria criteria = example.createCriteria();
+        criteria.andUserNameEqualTo(user.getUserName());
+        criteria.andUserPasswordEqualTo(user.getUserPassword());
+        List<BlogUser> userList = userMapper.selectByExample(example);
+        if (userList != null && userList.size() == 1){
+            return BaseResult.ok(userList);
+        }
+        return BaseResult.makeFail();
     }
 
 

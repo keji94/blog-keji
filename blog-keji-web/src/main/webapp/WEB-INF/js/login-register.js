@@ -92,8 +92,19 @@ function checkResigter() {
         shakeModal(tip);
     }
 
-    $.post("/user/register",{},function () {
-
+    $.post("/user/register",{userName:email,userPassword:password,userNickname:$('#nickname')[0].value},function (data) {
+        if(data.status == 200){
+            bootoast({
+                message: '注册成功!',
+                type: 'info',
+                position: 'bottom-center',
+                icon: undefined,
+                timeout: true,
+                animationDuration: 400,
+                dismissable: true
+            });
+            $('#loginModal').modal('hide');
+        }
     });
 
 }

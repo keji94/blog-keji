@@ -23,6 +23,8 @@
         <link href="../css/prettyPhoto.css" rel="stylesheet">
         <link href="../css/main.css" rel="stylesheet">
         <link href="../css/styles.css" rel="stylesheet">
+        <link href="../css/bootoast.css" rel="stylesheet">
+
 
         <!-- 引入JS-->
         <script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
@@ -30,6 +32,7 @@
         <script src="../js/jquery.bxslider.js"></script>
         <script src="../js/mooz.scripts.min.js"></script>
         <script src="../js/login-register.js" type="text/javascript"></script>
+        <script src="../js/bootoast.js" type="text/javascript"></script>
 
 
     </head>
