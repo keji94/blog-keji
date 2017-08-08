@@ -14,6 +14,17 @@
             });
         },"json");
     });
+
+    $(function () {
+        var user = "<%=session.getAttribute("username")%>";
+        if (user == null) {
+            $('#tmp').append("<li class='scroll'><a class='btn big-login' data-toggle='modal' href='javascript:void(0)' onclick='openLoginModal();'>登录</a></li><li class='scroll'><a class='btn big-register' data-toggle='modal' href='javascript:void(0)' onclick='openRegisterModal();'>注册</a></li>")
+        }else{
+            $('#tmp').append("<li class='scroll'><a class='btn big-login' data-toggle='modal' href='javascript:void(0)' onclick='openLoginModal();'>"+user+"</a></li><li class='scroll'><a class='btn big-register' data-toggle='modal' href='javascript:void(0)' onclick='openRegisterModal();'>退出登录</a></li>")
+        }
+    })
+
+
 </script>
 
 <header id="header">
@@ -33,7 +44,7 @@
                 <ul id="menuID" class="nav navbar-nav">
                     <li class="scroll active"><a href="#home">首页</a></li>
                 </ul>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="tmp">
                     <li class="scroll">
                         <form class="navbar-form navbar-right" role="search" style="padding-top: 20px">
                             <div class="form-group">
@@ -43,8 +54,9 @@
                         </form>
                     </li>
                     <li class="scroll"><a href="#"></a></li>
-                    <li class="scroll"><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">登录</a></li>
-                    <li class="scroll"><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">注册</a></li>
+
+                    <%--<li class="scroll"><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">登录</a></li>--%>
+                    <%--<li class="scroll"><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">注册</a></li>--%>
                 </ul>
             </div>
         </div><!--/.container-->

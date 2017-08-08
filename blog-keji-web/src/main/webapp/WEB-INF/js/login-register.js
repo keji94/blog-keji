@@ -47,14 +47,22 @@ function openRegisterModal(){
 function loginAjax(email){
     var emailValue = $('#emailLogin')[0].value;
     var passwordValue = $('#passwordLogin')[0].value;
-    $.post( "/user/login",{email:emailValue, password:passwordValue}, function( data ) {
-            if(data == 1){
-                window.location.replace("/home");            
+    $.post( "/user/login",{userName:emailValue, userPassword:passwordValue}, function(data) {
+            if(data.status == 200){
+                bootoast({
+                    message: '登录成功!',
+                    type: 'info',
+                    position: 'bottom-center',
+                    icon: undefined,
+                    timeout: true,
+                    animationDuration: 200,
+                    dismissable: true
+                });
             } else {
                  shakeModal(); 
             }
         });
-     // shakeModal();
+    window.location.reload();
 }
 
 function shakeModal(tip){

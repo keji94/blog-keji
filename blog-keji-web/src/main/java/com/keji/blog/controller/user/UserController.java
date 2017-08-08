@@ -59,9 +59,9 @@ public class UserController {
             return  result;
         }
         List<BlogUser> userList = result.getData();
+        String nickname = userList.get(0).getUserNickname();
         //登录成功，放入sessio
-        session.setAttribute("username",userList.get(0).getUserNickname());
-
+        session.setAttribute("username",nickname);
         String ipAddr = BlogUtil.getIpAddr(request);
         if (ipAddr != userList.get(0).getUserIp() ){
             //ip不同，做点事情

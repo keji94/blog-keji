@@ -59,9 +59,9 @@
             </div>
             <div class="modal-footer">
                 <div class="forgot login-footer">
-                            <span>Looking to
-                                 <a href="javascript: showRegisterForm();">create an account</a>
-                            ?</span>
+                            <span>没有账号？
+                                 <a href="javascript: showRegisterForm();">点我注册</a>
+                            </span>
                 </div>
                 <div class="forgot register-footer" style="display:none">
                     <span>已经拥有账号?</span>
