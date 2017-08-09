@@ -24,7 +24,7 @@
         <link href="../css/main.css" rel="stylesheet">
         <link href="../css/styles.css" rel="stylesheet">
         <link href="../css/bootoast.css" rel="stylesheet">
-
+        <link rel="stylesheet" href="../css/templatemo-style.css">
 
         <!-- 引入JS-->
         <script type="text/javascript" src="../js/jquery-1.11.3.min.js" ></script>
@@ -49,7 +49,6 @@
             <%@include file="blog.jsp"%>
 
         </div>
-
 
     </body>
 

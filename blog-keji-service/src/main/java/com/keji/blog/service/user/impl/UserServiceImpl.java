@@ -46,5 +46,29 @@ public class UserServiceImpl implements UserService{
         return BaseResult.makeFail();
     }
 
+    public BlogUser showUserData(String userName) {
+        BlogUserExample example = new BlogUserExample();
+        BlogUserExample.Criteria criteria = example.createCriteria();
+        criteria.andUserNameEqualTo(userName);
+        List<BlogUser> list = userMapper.selectByExample(example);
+        if (list != null && list.size() == 1){
+            return list.get(0);
+        }
+        return null;
+    }
+
+    public BaseResult updateUser(BlogUser user) {
+        BlogUserExample example = new BlogUserExample();
+        BlogUserExample.Criteria criteria = example.createCriteria();
+        criteria.andUserNameEqualTo(user.getUserName());
+        try {
+            userMapper.updateByExampleSelective(user,example);
+        } catch (Exception e) {
+            log.error("userMapper.updateByPrimaryKeySelective is error...",e);
+            return BaseResult.makeFail();
+        }
+        return BaseResult.ok();
+    }
+
 
 }

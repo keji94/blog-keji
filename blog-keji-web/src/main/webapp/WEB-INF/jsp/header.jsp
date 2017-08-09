@@ -18,9 +18,9 @@
     $(function () {
         var user = "<%=session.getAttribute("username")%>";
         if (user == null) {
-            $('#tmp').append("<li class='scroll'><a class='btn big-login' data-toggle='modal' href='javascript:void(0)' onclick='openLoginModal();'>登录</a></li><li class='scroll'><a class='btn big-register' data-toggle='modal' href='javascript:void(0)' onclick='openRegisterModal();'>注册</a></li>")
-        }else{
             $('#tmp').append("<li class='scroll'><a class='btn big-login' data-toggle='modal' href='javascript:void(0)' onclick='openLoginModal();'>"+user+"</a></li><li class='scroll'><a class='btn big-register' data-toggle='modal' href='javascript:void(0)' onclick='openRegisterModal();'>退出登录</a></li>")
+        }else{
+            $('#tmp').append("<li class='scroll'><a class='btn big-login' data-toggle='modal' href='javascript:void(0)' onclick='openLoginModal();'>登录</a></li><li class='scroll'><a class='btn big-register' data-toggle='modal' href='javascript:void(0)' onclick='openRegisterModal();'>注册</a></li>")
         }
     })
 

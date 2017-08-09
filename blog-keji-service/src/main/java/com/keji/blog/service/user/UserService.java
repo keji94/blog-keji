@@ -13,4 +13,8 @@ public interface UserService {
     BaseResult register(BlogUser user);
 
     BaseResult<List<BlogUser>> existUser(BlogUser user);
+
+    BlogUser showUserData(String userName);
+
+    BaseResult updateUser(BlogUser user);
 }
