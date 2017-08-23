@@ -59,11 +59,11 @@ section:last-child {
 	font-size:0;
 	overflow:hidden;
 }
-/*- Reset bootstrap -*/
+/*!*- Reset bootstrap -*!
 @media (min-width: 1200px)
 .container {
 	width: 1260px;
-}
+}*/
 .row-gutter {
 	margin-left: -20px;
 	margin-right: -20px;

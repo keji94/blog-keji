@@ -86,6 +86,17 @@ public class UserController {
         return BaseResult.ok(user);
     }
 
+    /**
+     * 更新用户，包含上传图片。
+     * @param user
+     * @param pic
+     * @return
+     *
+     * springmvc实现图片上传：
+     *  1.post请求   2.<input type = "file"> 3.form表单multipart/form-data
+     *  2.springmvc.xml 中配置文件上传解析器
+     *  3.method参数列表中MultipartFile filename
+     */
     @RequestMapping("/updateUser")
     public BaseResult updateUser(BlogUser user, MultipartFile pic) {
         if (user == null){
