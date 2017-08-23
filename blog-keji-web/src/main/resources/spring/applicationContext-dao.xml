@@ -31,4 +31,9 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.keji.blog.mapper"></property>
     </bean>
+
+    <!-- SolrServer的配置 -->
+    <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+        <constructor-arg index="0" value="http://localhost:8080/solr"/>
+    </bean>
 </beans>
