@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
  * 如果使用JavaConfig的话，可以在配置类的类级别上通过使用EnableAspectJ-AutoProxy注解启用自动注解
  * 如果使用xml装备bean，需要使用<aop:aspectj-autoproxy>元素。
  */
-@Aspect
+@Aspect//使用Aspect注解标注，表明Audience不仅仅是一个POJO，还是一个切面
 public class Audience {
 
     /**

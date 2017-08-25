@@ -38,7 +38,7 @@ public class BlankDisc implements CompactDisc {
 
     @Override
     public void playTrack(int num) {
-
+        System.out.println("播放"+num+"次");
     }
 
     //setter

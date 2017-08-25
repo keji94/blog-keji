@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * Created by wb-ny291824 on 2017/8/21.
- * 参数化的通知来监听次数
+ * 参数化的通知来监听磁带播放次数
  */
 @Aspect
 public class TrackCounter {
@@ -21,12 +21,12 @@ public class TrackCounter {
             "&& args(trackNumber)") //int 表示接受int类型的参数
     public void trackPlayed(int trackNumber) { }
 
-    @Before("trackPlayed(trackNumer)")
+    @Before("trackPlayed(trackNumer)")//在播放前，为该磁道计数
     public void countTrack(int trackNumer) {
         int currentCount = getPlayCout(trackNumer);
     }
 
-    private int getPlayCout(int trackNumer) {
+    public int getPlayCout(int trackNumer) {
         return trackCounts.containsKey(trackNumer) ? trackCounts.get(trackNumer):0;
     }
 }

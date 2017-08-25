@@ -1,5 +1,6 @@
 package com.keji.blog.controller.thread.ConsumerAndProvider.BlockingQunene;
 
+import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -25,7 +26,7 @@ public class Storage {
     public void produce(int num)
     {
         // 如果仓库剩余容量为0
-        if (list.size() == MAX_SIZE)
+        if (this.list.size() == MAX_SIZE)
         {
             System.out.println("【库存量】:" + MAX_SIZE + "/t暂时不能执行生产任务!");
         }
@@ -36,14 +37,14 @@ public class Storage {
             try
             {
                 // 放入产品，自动阻塞
-                list.put(new Object());
+                this.list.put(new Object());
             }
             catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
 
-            System.out.println("【现仓储量为】:" + list.size());
+            System.out.println("【现仓储量为】:" + this.list.size());
         }
     }
 
