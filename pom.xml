@@ -44,7 +44,6 @@
 
     <dependencyManagement>
         <dependencies>
-
             <!--HuTool工具类-->
             <dependency>
                 <groupId>com.xiaoleilu</groupId>

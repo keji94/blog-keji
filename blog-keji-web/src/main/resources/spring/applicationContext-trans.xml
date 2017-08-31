@@ -45,7 +45,7 @@
     <!--<aop:aspectj-autoproxy />-->
 
     <!--使用spring的<aop></aop>将一个没有注解的类声明为一个切面-->
-    <bean class="com.keji.blog.controller.spring.aspect.Audience" />
+<!--    <bean class="com.keji.blog.controller.spring.aspect.Audience" />
     <aop:config>
         <aop:aspect ref="audience">
             <aop:pointcut id="performance" expression="execution(* com.keji.blog.controller.spring.aspect.Performance.perform(..))"/>
@@ -56,7 +56,7 @@
 
             <aop:around method="watchPerformance" pointcut-ref="performance"/>
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
 
 
 

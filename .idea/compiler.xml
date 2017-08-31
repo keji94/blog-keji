@@ -12,7 +12,7 @@
         <module name="blog-keji-web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel>
       <module name="blog-keji" target="1.8" />
       <module name="blog-keji-common" target="1.8" />
       <module name="blog-keji-dao" target="1.8" />
