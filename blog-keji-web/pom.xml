@@ -12,15 +12,21 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>com.keji</groupId>
+            <artifactId>blog-keji-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.keji</groupId>
             <artifactId>blog-keji-service</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
         <!--HuTool工具类-->
         <dependency>
@@ -81,7 +87,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>4.2.6.RELEASE</version>
         </dependency>
         <!-- Mybatis -->
         <dependency>
@@ -113,11 +118,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.keji</groupId>
-            <artifactId>blog-keji-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
 
         <!--lucene组件-->
         <dependency>
@@ -215,6 +216,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
         </dependency>
+
 
 
     </dependencies>

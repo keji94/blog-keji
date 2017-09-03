@@ -1,6 +1,5 @@
 package com.keji.blog.controller.backstage;
 
-import com.keji.blog.controller.javabean.ConfigInfo;
 import com.keji.blog.util.FileUtil;
 import com.keji.blog.util.JdbcUtil;
 import org.apache.commons.io.FileUtils;
