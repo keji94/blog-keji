@@ -1,6 +1,6 @@
 package com.keji.blog.service.content.impl;
 
-import com.keji.blog.mapper.BlogCategoryMapper;
+import com.keji.blog.dao.BlogCategoryMapper;
 import com.keji.blog.dataobject.BlogCategory;
 import com.keji.blog.dataobject.BlogCategoryExample;
 import com.keji.blog.result.BaseResult;

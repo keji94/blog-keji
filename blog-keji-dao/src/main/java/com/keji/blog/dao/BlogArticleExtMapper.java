@@ -1,4 +1,4 @@
-package com.keji.blog.mapper;
+package com.keji.blog.dao;
 
 import com.keji.blog.dataobject.BlogArticleExt;
 import com.keji.blog.dataobject.BlogArticleExtExample;

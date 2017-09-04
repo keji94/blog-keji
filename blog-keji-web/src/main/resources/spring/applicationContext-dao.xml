@@ -25,12 +25,13 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="configLocation" value="classpath:mybatis/SqlMapconfig.xml"></property>
         <property name="dataSource" ref="dataSource"></property>
-        <!--<property name="mapperLocations" value="classpath:com/keji/blog/dao/*.xml"/>-->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"/>
+        <property name="typeAliasesPackage" value="com.keji.blog.dao"/>
     </bean>
     <!-- 配置扫描包，加载mapper代理对象 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.keji.blog.mapper"></property>
-    </bean>
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value="com.keji.blog.mapper"></property>-->
+    <!--</bean>-->
 
     <!-- SolrServer的配置 -->
     <bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">

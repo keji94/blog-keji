@@ -1,6 +1,6 @@
 package com.keji.blog.service.user.impl;
 
-import com.keji.blog.mapper.BlogUserMapper;
+import com.keji.blog.dao.BlogUserMapper;
 import com.keji.blog.dataobject.BlogUser;
 import com.keji.blog.dataobject.BlogUserExample;
 import com.keji.blog.result.BaseResult;

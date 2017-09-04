@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.keji.blog.mapper.BlogUserMapper" >
+<mapper namespace="com.keji.blog.dao.BlogUserMapper" >
   <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogUser" >
     <id column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
