@@ -1,6 +1,6 @@
 package com.keji.blog.service.content;
 
-import com.keji.blog.pojo.BlogCategory;
+import com.keji.blog.dataobject.BlogCategory;
 import com.keji.blog.result.BaseResult;
 
 import java.util.List;

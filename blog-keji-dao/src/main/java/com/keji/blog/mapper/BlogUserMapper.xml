@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.keji.blog.mapper.BlogUserMapper" >
-  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.BlogUser" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogUser" >
     <id column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="user_nickname" property="userNickname" jdbcType="VARCHAR" />
@@ -76,7 +76,7 @@
     user_id, user_name, user_nickname, user_password, user_question, user_answer, user_picture, 
     user_status, user_created, user_updated, user_ip
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.BlogUserExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.dataobject.BlogUserExample" >
     select
     <if test="distinct" >
       distinct
@@ -100,13 +100,13 @@
     delete from blog_user
     where user_id = #{userId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.BlogUserExample" >
+  <delete id="deleteByExample" parameterType="com.keji.blog.dataobject.BlogUserExample" >
     delete from blog_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.keji.blog.pojo.BlogUser" >
+  <insert id="insert" parameterType="com.keji.blog.dataobject.BlogUser" >
     insert into blog_user (user_id, user_name, user_nickname, 
       user_password, user_question, user_answer, 
       user_picture, user_status, user_created, 
@@ -116,7 +116,7 @@
       #{userPicture,jdbcType=VARCHAR}, #{userStatus,jdbcType=BIT}, #{userCreated,jdbcType=TIMESTAMP}, 
       #{userUpdated,jdbcType=TIMESTAMP}, #{userIp,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.keji.blog.pojo.BlogUser" >
+  <insert id="insertSelective" parameterType="com.keji.blog.dataobject.BlogUser" >
     insert into blog_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -189,7 +189,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.keji.blog.pojo.BlogUserExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.keji.blog.dataobject.BlogUserExample" resultType="java.lang.Integer" >
     select count(*) from blog_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -253,7 +253,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.BlogUser" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.dataobject.BlogUser" >
     update blog_user
     <set >
       <if test="userName != null" >
@@ -289,7 +289,7 @@
     </set>
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.BlogUser" >
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.dataobject.BlogUser" >
     update blog_user
     set user_name = #{userName,jdbcType=VARCHAR},
       user_nickname = #{userNickname,jdbcType=VARCHAR},

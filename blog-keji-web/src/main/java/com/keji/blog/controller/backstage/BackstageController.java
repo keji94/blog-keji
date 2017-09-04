@@ -1,8 +1,8 @@
 package com.keji.blog.controller.backstage;
 
 
-import com.keji.blog.pojo.BlogCategory;
-import com.keji.blog.pojo.BlogPicture;
+import com.keji.blog.dataobject.BlogCategory;
+import com.keji.blog.dataobject.BlogPicture;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.result.EasyUiTreeNode;
 import com.keji.blog.service.backstage.BackstageService;

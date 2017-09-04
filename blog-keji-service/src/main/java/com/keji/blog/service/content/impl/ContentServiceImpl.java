@@ -1,8 +1,8 @@
 package com.keji.blog.service.content.impl;
 
 import com.keji.blog.mapper.BlogCategoryMapper;
-import com.keji.blog.pojo.BlogCategory;
-import com.keji.blog.pojo.BlogCategoryExample;
+import com.keji.blog.dataobject.BlogCategory;
+import com.keji.blog.dataobject.BlogCategoryExample;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.content.ContentService;
 import lombok.extern.slf4j.Slf4j;

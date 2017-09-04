@@ -1,7 +1,7 @@
 package com.keji.blog.mapper;
 
-import com.keji.blog.pojo.BlogComments;
-import com.keji.blog.pojo.BlogCommentsExample;
+import com.keji.blog.dataobject.BlogComments;
+import com.keji.blog.dataobject.BlogCommentsExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.keji.blog.mapper.BlogCommentsMapper" >
-  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.BlogComments" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogComments" >
     <id column="comment_id" property="commentId" jdbcType="BIGINT" />
     <result column="article_id" property="articleId" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
@@ -9,7 +9,7 @@
     <result column="comment_updated" property="commentUpdated" jdbcType="TIMESTAMP" />
     <result column="comment_status" property="commentStatus" jdbcType="BIT" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.keji.blog.pojo.BlogComments" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.keji.blog.dataobject.BlogComments" extends="BaseResultMap" >
     <result column="comment_content" property="commentContent" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -76,7 +76,7 @@
   <sql id="Blob_Column_List" >
     comment_content
   </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.keji.blog.pojo.BlogCommentsExample" >
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.keji.blog.dataobject.BlogCommentsExample" >
     select
     <if test="distinct" >
       distinct
@@ -92,7 +92,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.BlogCommentsExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.dataobject.BlogCommentsExample" >
     select
     <if test="distinct" >
       distinct
@@ -118,13 +118,13 @@
     delete from blog_comments
     where comment_id = #{commentId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.BlogCommentsExample" >
+  <delete id="deleteByExample" parameterType="com.keji.blog.dataobject.BlogCommentsExample" >
     delete from blog_comments
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.keji.blog.pojo.BlogComments" >
+  <insert id="insert" parameterType="com.keji.blog.dataobject.BlogComments" >
     insert into blog_comments (comment_id, article_id, user_id, 
       comment_created, comment_updated, comment_status, 
       comment_content)
@@ -132,7 +132,7 @@
       #{commentCreated,jdbcType=TIMESTAMP}, #{commentUpdated,jdbcType=TIMESTAMP}, #{commentStatus,jdbcType=BIT}, 
       #{commentContent,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.keji.blog.pojo.BlogComments" >
+  <insert id="insertSelective" parameterType="com.keji.blog.dataobject.BlogComments" >
     insert into blog_comments
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="commentId != null" >
@@ -181,7 +181,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.keji.blog.pojo.BlogCommentsExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.keji.blog.dataobject.BlogCommentsExample" resultType="java.lang.Integer" >
     select count(*) from blog_comments
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -241,7 +241,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.BlogComments" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.dataobject.BlogComments" >
     update blog_comments
     <set >
       <if test="articleId != null" >
@@ -265,7 +265,7 @@
     </set>
     where comment_id = #{commentId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.keji.blog.pojo.BlogComments" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.keji.blog.dataobject.BlogComments" >
     update blog_comments
     set article_id = #{articleId,jdbcType=BIGINT},
       user_id = #{userId,jdbcType=BIGINT},
@@ -275,7 +275,7 @@
       comment_content = #{commentContent,jdbcType=LONGVARCHAR}
     where comment_id = #{commentId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.BlogComments" >
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.dataobject.BlogComments" >
     update blog_comments
     set article_id = #{articleId,jdbcType=BIGINT},
       user_id = #{userId,jdbcType=BIGINT},

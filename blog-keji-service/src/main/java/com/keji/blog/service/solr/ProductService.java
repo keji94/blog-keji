@@ -1,6 +1,6 @@
 package com.keji.blog.service.solr;
 
-import com.keji.blog.pojo.ResultModel;
+import com.keji.blog.dataobject.ResultModel;
 import com.keji.blog.solr.ProductDao;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.springframework.beans.factory.annotation.Autowired;

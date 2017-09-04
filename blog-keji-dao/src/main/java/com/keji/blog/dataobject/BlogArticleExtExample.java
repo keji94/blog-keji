@@ -1,4 +1,4 @@
-package com.keji.blog.pojo;
+package com.keji.blog.dataobject;
 
 import java.util.ArrayList;
 import java.util.Date;

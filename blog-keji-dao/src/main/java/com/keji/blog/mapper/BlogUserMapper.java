@@ -1,7 +1,7 @@
 package com.keji.blog.mapper;
 
-import com.keji.blog.pojo.BlogUser;
-import com.keji.blog.pojo.BlogUserExample;
+import com.keji.blog.dataobject.BlogUser;
+import com.keji.blog.dataobject.BlogUserExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

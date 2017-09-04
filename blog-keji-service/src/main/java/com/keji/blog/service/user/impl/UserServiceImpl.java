@@ -1,11 +1,10 @@
 package com.keji.blog.service.user.impl;
 
 import com.keji.blog.mapper.BlogUserMapper;
-import com.keji.blog.pojo.BlogUser;
-import com.keji.blog.pojo.BlogUserExample;
+import com.keji.blog.dataobject.BlogUser;
+import com.keji.blog.dataobject.BlogUserExample;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.user.UserService;
-import com.keji.blog.util.BlogUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

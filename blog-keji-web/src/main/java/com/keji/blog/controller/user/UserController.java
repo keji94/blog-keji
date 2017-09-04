@@ -1,6 +1,6 @@
 package com.keji.blog.controller.user;
 
-import com.keji.blog.pojo.BlogUser;
+import com.keji.blog.dataobject.BlogUser;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.user.UserService;
 import com.keji.blog.util.BlogUtil;

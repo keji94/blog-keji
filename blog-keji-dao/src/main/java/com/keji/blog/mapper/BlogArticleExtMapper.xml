@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.keji.blog.mapper.BlogArticleExtMapper" >
-  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.BlogArticleExt" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogArticleExt" >
     <id column="ext_id" property="extId" jdbcType="BIGINT" />
     <result column="ext_good" property="extGood" jdbcType="INTEGER" />
     <result column="ext_bad" property="extBad" jdbcType="INTEGER" />
@@ -70,7 +70,7 @@
   <sql id="Base_Column_List" >
     ext_id, ext_good, ext_bad, article_id, ext_create, ext_updated
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.BlogArticleExtExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.dataobject.BlogArticleExtExample" >
     select
     <if test="distinct" >
       distinct
@@ -94,13 +94,13 @@
     delete from blog_article_ext
     where ext_id = #{extId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.BlogArticleExtExample" >
+  <delete id="deleteByExample" parameterType="com.keji.blog.dataobject.BlogArticleExtExample" >
     delete from blog_article_ext
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.keji.blog.pojo.BlogArticleExt" >
+  <insert id="insert" parameterType="com.keji.blog.dataobject.BlogArticleExt" >
     insert into blog_article_ext (ext_id, ext_good, ext_bad, 
       article_id, ext_create, ext_updated
       )
@@ -108,7 +108,7 @@
       #{articleId,jdbcType=BIGINT}, #{extCreate,jdbcType=TIMESTAMP}, #{extUpdated,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.keji.blog.pojo.BlogArticleExt" >
+  <insert id="insertSelective" parameterType="com.keji.blog.dataobject.BlogArticleExt" >
     insert into blog_article_ext
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="extId != null" >
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.keji.blog.pojo.BlogArticleExtExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.keji.blog.dataobject.BlogArticleExtExample" resultType="java.lang.Integer" >
     select count(*) from blog_article_ext
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -195,7 +195,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.BlogArticleExt" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.dataobject.BlogArticleExt" >
     update blog_article_ext
     <set >
       <if test="extGood != null" >
@@ -216,7 +216,7 @@
     </set>
     where ext_id = #{extId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.BlogArticleExt" >
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.dataobject.BlogArticleExt" >
     update blog_article_ext
     set ext_good = #{extGood,jdbcType=INTEGER},
       ext_bad = #{extBad,jdbcType=INTEGER},

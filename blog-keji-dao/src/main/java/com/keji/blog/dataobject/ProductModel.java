@@ -1,4 +1,4 @@
-package com.keji.blog.pojo;
+package com.keji.blog.dataobject;
 public class ProductModel {
 	// 商品编号
 	private String pid;

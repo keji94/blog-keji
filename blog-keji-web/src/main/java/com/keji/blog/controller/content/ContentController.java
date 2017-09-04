@@ -1,6 +1,6 @@
 package com.keji.blog.controller.content;
 
-import com.keji.blog.pojo.BlogCategory;
+import com.keji.blog.dataobject.BlogCategory;
 import com.keji.blog.result.BaseResult;
 import com.keji.blog.service.content.ContentService;
 import lombok.extern.slf4j.Slf4j;

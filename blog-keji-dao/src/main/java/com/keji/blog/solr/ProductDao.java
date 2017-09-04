@@ -1,10 +1,9 @@
 package com.keji.blog.solr;
 
 
-import com.keji.blog.pojo.ProductModel;
-import com.keji.blog.pojo.ResultModel;
+import com.keji.blog.dataobject.ProductModel;
+import com.keji.blog.dataobject.ResultModel;
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
@@ -12,7 +11,6 @@ import org.apache.solr.common.SolrDocumentList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

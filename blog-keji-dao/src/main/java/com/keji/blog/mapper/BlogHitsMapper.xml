@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.keji.blog.mapper.BlogHitsMapper" >
-  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.BlogHits" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogHits" >
     <id column="hits_id" property="hitsId" jdbcType="BIGINT" />
     <result column="article_id" property="articleId" jdbcType="BIGINT" />
     <result column="hit_count" property="hitCount" jdbcType="BIGINT" />
@@ -69,7 +69,7 @@
   <sql id="Base_Column_List" >
     hits_id, article_id, hit_count, hits_created, hits_updated
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.BlogHitsExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.dataobject.BlogHitsExample" >
     select
     <if test="distinct" >
       distinct
@@ -93,19 +93,19 @@
     delete from blog_hits
     where hits_id = #{hitsId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.BlogHitsExample" >
+  <delete id="deleteByExample" parameterType="com.keji.blog.dataobject.BlogHitsExample" >
     delete from blog_hits
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.keji.blog.pojo.BlogHits" >
+  <insert id="insert" parameterType="com.keji.blog.dataobject.BlogHits" >
     insert into blog_hits (hits_id, article_id, hit_count, 
       hits_created, hits_updated)
     values (#{hitsId,jdbcType=BIGINT}, #{articleId,jdbcType=BIGINT}, #{hitCount,jdbcType=BIGINT}, 
       #{hitsCreated,jdbcType=TIMESTAMP}, #{hitsUpdated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.keji.blog.pojo.BlogHits" >
+  <insert id="insertSelective" parameterType="com.keji.blog.dataobject.BlogHits" >
     insert into blog_hits
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="hitsId != null" >
@@ -142,7 +142,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.keji.blog.pojo.BlogHitsExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.keji.blog.dataobject.BlogHitsExample" resultType="java.lang.Integer" >
     select count(*) from blog_hits
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -182,7 +182,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.BlogHits" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.dataobject.BlogHits" >
     update blog_hits
     <set >
       <if test="articleId != null" >
@@ -200,7 +200,7 @@
     </set>
     where hits_id = #{hitsId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.BlogHits" >
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.dataobject.BlogHits" >
     update blog_hits
     set article_id = #{articleId,jdbcType=BIGINT},
       hit_count = #{hitCount,jdbcType=BIGINT},

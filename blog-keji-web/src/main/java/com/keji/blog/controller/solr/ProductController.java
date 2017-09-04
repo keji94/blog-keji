@@ -1,6 +1,6 @@
 package com.keji.blog.controller.solr;
 
-import com.keji.blog.pojo.ResultModel;
+import com.keji.blog.dataobject.ResultModel;
 import com.keji.blog.service.solr.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

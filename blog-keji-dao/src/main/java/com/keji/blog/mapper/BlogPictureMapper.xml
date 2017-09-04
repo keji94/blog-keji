@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.keji.blog.mapper.BlogPictureMapper" >
-  <resultMap id="BaseResultMap" type="com.keji.blog.pojo.BlogPicture" >
+  <resultMap id="BaseResultMap" type="com.keji.blog.dataobject.BlogPicture" >
     <id column="picture_id" property="pictureId" jdbcType="BIGINT" />
     <result column="picture_name" property="pictureName" jdbcType="VARCHAR" />
     <result column="picture_resource" property="pictureResource" jdbcType="VARCHAR" />
@@ -73,7 +73,7 @@
     picture_id, picture_name, picture_resource, picture_status, picture_orderNum, article_id, 
     picture_created, picture_updated
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.pojo.BlogPictureExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.keji.blog.dataobject.BlogPictureExample" >
     select
     <if test="distinct" >
       distinct
@@ -97,13 +97,13 @@
     delete from blog_picture
     where picture_id = #{pictureId,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.keji.blog.pojo.BlogPictureExample" >
+  <delete id="deleteByExample" parameterType="com.keji.blog.dataobject.BlogPictureExample" >
     delete from blog_picture
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.keji.blog.pojo.BlogPicture" >
+  <insert id="insert" parameterType="com.keji.blog.dataobject.BlogPicture" >
     insert into blog_picture (picture_id, picture_name, picture_resource, 
       picture_status, picture_orderNum, article_id, 
       picture_created, picture_updated)
@@ -111,7 +111,7 @@
       #{pictureStatus,jdbcType=BIT}, #{pictureOrdernum,jdbcType=INTEGER}, #{articleId,jdbcType=BIGINT}, 
       #{pictureCreated,jdbcType=TIMESTAMP}, #{pictureUpdated,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.keji.blog.pojo.BlogPicture" >
+  <insert id="insertSelective" parameterType="com.keji.blog.dataobject.BlogPicture" >
     insert into blog_picture
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="pictureId != null" >
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.keji.blog.pojo.BlogPictureExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.keji.blog.dataobject.BlogPictureExample" resultType="java.lang.Integer" >
     select count(*) from blog_picture
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -218,7 +218,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.pojo.BlogPicture" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.keji.blog.dataobject.BlogPicture" >
     update blog_picture
     <set >
       <if test="pictureName != null" >
@@ -245,7 +245,7 @@
     </set>
     where picture_id = #{pictureId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.keji.blog.pojo.BlogPicture" >
+  <update id="updateByPrimaryKey" parameterType="com.keji.blog.dataobject.BlogPicture" >
     update blog_picture
     set picture_name = #{pictureName,jdbcType=VARCHAR},
       picture_resource = #{pictureResource,jdbcType=VARCHAR},
